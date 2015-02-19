@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="well well-sm">
+              <form ng-controller="FormCtrl" ng-submit="checkFields()" class="form-horizontal" action="">
+<!--              <fieldset>-->
+                <legend class="text-left">Contact Us</legend>
+
+                <!-- Name input-->
+                <div class="form-group">
+                  <div class='col-md-12'><strong>Name</strong></div>
+                  <div class="col-md-9">
+                    <input id="name" ng-model="name" type="text" placeholder="Your name" class="form-control">
+                      <div ng-show="nameError">Enter valid name.</div>
+                  </div>
+                </div>
+
+                <!-- Email input-->
+                <div class="form-group">
+                  <div class='col-md-12'><strong>Email</strong></div>
+                  <div class="col-md-9">
+                    <input id="email" ng-model="email" type="text" placeholder="Your@email.com" class="form-control">
+                      <div ng-show="emailError1">Submission empty.Enter valid email.</div>
+                      <div ng-show="emailError2">Enter valid email, needs to include '@'.</div>
+                  </div>
+                </div>
+
+                <!-- Website input-->
+                <div class="form-group">
+                  <div class='col-md-12'><strong>Website</strong></div>
+                  <div class="col-md-9">
+                    <input id="website" ng-model="website" type="text" placeholder="http://yoursite.com" class="form-control">
+                      <div ng-show="siteError1">Submission empty.Enter valid website.</div>
+                      <div ng-show="siteError2">Enter valid website, needs to start with 'http://' .</div>
+                  </div>
+                </div>
+
+                <!-- Message body -->
+                <div class="form-group">
+                  <div class='col-md-12'><strong>Message</strong></div>
+                  <div class="col-md-9">
+                    <textarea class="form-control" id="message" ng-model="message" placeholder="Please enter a friendly message here..." rows="5"></textarea>
+                  </div>
+                  <div ng-show="messageError">Enter valid message.</div>
+                </div>
+
+                <!-- Form actions -->
+                <div class="form-group">
+                  <div class="col-md-12 text-left">
+                    <input class="btn btn-lg" type="submit" value="Submit">
+                  </div>
+                </div>
+<!--              </fieldset>-->
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers.js"></script>
+
+</body>
+</html>
