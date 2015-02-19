@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <div class="well well-sm">
-              <form ng-controller="FormCtrl" ng-submit="checkFields()" class="form-horizontal">
+              <form novalidate ng-show='form' ng-controller="FormCtrl" ng-submit="checkFields()" class="form-horizontal" name='form'>
 <!--              <fieldset>-->
                 <legend class="text-left">Contact Us</legend>
 
@@ -29,7 +29,7 @@
                 <div class="form-group">
                   <div class='col-md-12'><strong>Email</strong></div>
                   <div class="col-md-9">
-                    <input id="email" ng-model="email" type="text" placeholder="Your@email.com" class="form-control">
+                    <input required id="email" ng-model="email" type="text" placeholder="Your@email.com" class="form-control">
                       <div ng-show="emailError1" class="alert alert-danger">Submission empty.Enter valid email.</div>
                       <div ng-show="emailError2" class="alert alert-danger">Enter valid email, needs to include '@'.</div>
                   </div>
@@ -39,7 +39,7 @@
                 <div class="form-group">
                   <div class='col-md-12'><strong>Website</strong></div>
                   <div class="col-md-9">
-                    <input id="website" ng-model="website" type="text" placeholder="http://yoursite.com" class="form-control">
+                    <input  required id="website" ng-model="website" type="text" placeholder="http://yoursite.com" class="form-control">
                       <div ng-show="siteError1" class="alert alert-danger">Submission empty.Enter valid website.</div>
                       <div ng-show="siteError2" class="alert alert-danger">Enter valid website, needs to start with 'http://' .</div>
                   </div>
@@ -49,7 +49,7 @@
                 <div class="form-group">
                   <div class='col-md-12'><strong>Message</strong></div>
                   <div class="col-md-9">
-                    <textarea class="form-control" id="message" ng-model="message" placeholder="Please enter a friendly message here..." rows="5"></textarea>
+                    <textarea required class="form-control" id="message" ng-model="message" placeholder="Please enter a friendly message here..." rows="5"></textarea>
                     <div ng-show="messageError" class="alert alert-danger">Enter valid message.</div>
                   </div>
                 </div>
@@ -62,6 +62,10 @@
                 </div>
 <!--              </fieldset>-->
               </form>
+                
+                <div ng-show="$scope.form.$valid">
+                    <p>Yeah!!Yeah! Good job yo</p>
+                </div>
             </div>
           </div>
         </div>
