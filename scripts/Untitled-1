@@ -1,0 +1,24 @@
+var run = false;
+console.log(run);
+/////////////////////==================
+function fancy(arg1, arg2){
+    console.log(run);
+    if(run){
+        console.log('I can run');
+    }
+    else{
+        console.log('I cant run');
+        }
+    
+//    function blue(){
+//        console.log('WIll i run?');
+//    }
+    blue = function(){
+        console.log('WIll i run?');
+    }
+    
+  
+}
+/////////////////////==================
+fancy();
+blue();

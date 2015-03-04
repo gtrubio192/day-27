@@ -10,8 +10,9 @@ angular.module('app.controllers', [])
 //    $scope.siteError1 = false;
 //    $scope.siteError2 = false;
 //    $scope.messageError = false;
-    $scope.allgood = false;
+    $scope.success = false;
     $scope.formPage = true;
+    
 
     $scope.checkFields = function(){
         console.log("click");
@@ -50,12 +51,24 @@ angular.module('app.controllers', [])
         {
             $scope.siteError2 = true;
         }
-
-        if($scope.form.$valid)
+        
+        if($scope.nameError ||
+            $scope.emailError1 ||
+            $scope.emailError2 ||
+            $scope.siteError1 ||
+            $scope.siteError2 ||
+            $scope.messageError)
         {
-            alert("something cool");
-//            $scope.allgood = true;
+            console.log("success");
+            $scope.success = true;
             $scope.form = false;
         }
+
+//        if($scope.form.$valid)
+//        {
+//            alert("something cool");
+////            $scope.allgood = true;
+//            $scope.form = false;
+//        }
     }
 });
