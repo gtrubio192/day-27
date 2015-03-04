@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <div class="well well-sm">
-              <form novalidate ng-show='form' ng-controller="FormCtrl" ng-submit="checkFields()" class="form-horizontal" name='form'>
+            <div ng-controller="FormCtrl" class="well well-sm">
+              <form novalidate ng-show='form'  ng-submit="checkFields()" class="form-horizontal" name='form'>
 <!--              <fieldset>-->
                 <legend class="text-left">Contact Us</legend>
 
@@ -64,7 +64,7 @@
               </form>
                 
                 <div ng-show="success">
-                    <p>Yeah!!Yeah! Good job yo</p>
+                    <p>Contact form submitted</p>
                 </div>
             </div>
           </div>

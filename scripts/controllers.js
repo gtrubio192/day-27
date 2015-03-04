@@ -26,25 +26,35 @@ angular.module('app.controllers', [])
         if(!$scope.name)
         {
             $scope.nameError = true;
+            console.log("name success");
+
         }
         if(!$scope.message)
         {
             $scope.messageError = true;
+            console.log("message success");
+
         }
         if(!$scope.email)
         {
             $scope.emailError1 = true;
+            console.log("email 1 success");
+
         }
         
         if($scope.email.indexOf('@') === -1)
         {
             console.log($scope.email);
             $scope.emailError2 = true;
+            console.log("email 2 success");
+
         }
         
         if(!$scope.website)
         {
             $scope.siteError1 = true;
+            console.log("site success");
+
         }
         
         if($scope.website.substring(0,7) !== 'http://')
@@ -52,12 +62,12 @@ angular.module('app.controllers', [])
             $scope.siteError2 = true;
         }
         
-        if($scope.nameError ||
-            $scope.emailError1 ||
-            $scope.emailError2 ||
-            $scope.siteError1 ||
-            $scope.siteError2 ||
-            $scope.messageError)
+        if(!$scope.nameError &&
+            !$scope.emailError1 &&
+            !$scope.emailError2 &&
+            !$scope.siteError1 &&
+            !$scope.siteError2 &&
+            !$scope.messageError)
         {
             console.log("success");
             $scope.success = true;

@@ -22,3 +22,7 @@ input[type=submit]:hover{
   border: 1px solid #DDDDDD;
 */
 }
+
+p{
+    text-align: center;
+}
